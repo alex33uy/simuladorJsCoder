@@ -64,6 +64,7 @@ const products = [
 let carrito = [];
 
 let productsShown = document.querySelector("#prods-sct");
+let productsShown2 = document.querySelector("#prods2-sct");
 
 products.forEach((prod) => {
   productsShown.innerHTML += `<div class="card m-3 flex-wrap" style="width: 18rem;">
@@ -101,6 +102,20 @@ buttons.forEach((btn) => {
 
       console.log("Producto seleccionado:", product);
       console.log(carrito);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
     }
   });
 });
+
+let cart = JSON.parse(localStorage.getItem("carrito")) || [];
+
+let cartShown = document.querySelector("#cartProds");
+
+console.log(cart);
+
+cartShown.innerHTML += `<div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                        </div>`;
