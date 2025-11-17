@@ -18,7 +18,12 @@
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-               <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../index.html"
+                >Inicio</a
+              >
               <a class="nav-link" href="./shop.html">Tienda</a>
               <a class="nav-link" href="./cart.html">Carrito</a>
             </div>
@@ -29,11 +34,57 @@
     <main>
       <section>
         <h1 id="title" class="text-center">Carrito</h1>
-        <br>
-        <article id="prodsDeCarrito"></article>
-        
+        <br />
+        <article id="prodsDeCarrito">
+        </article>
+        <div
+          class="modal fade"
+          id="confirmCompraModal"
+          tabindex="-1"
+          aria-labelledby="confirmCompraLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="confirmCompraLabel">
+                  Confirmar compra
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <div class="modal-body">
+                ¿Estás seguro de que deseas completar tu compra?
+                <br /><br />
+                <strong>Total a pagar:</strong> <span id="totalCompra"></span>
+              </div>
+
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button id="confirmarBtn" type="button" class="btn btn-primary">
+                  Sí, comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      
+      <div class="sticky-confirm-container">
+        <button class="btn btn-success w-100" id="btnConfirmar" data-bs-toggle="modal" data-bs-target="#confirmCompraModal">
+          Confirmar compra
+        </button>
+      </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
